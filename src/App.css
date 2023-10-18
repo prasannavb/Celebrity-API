@@ -1,0 +1,116 @@
+  @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Monoton&display=swap');
+.section
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.self
+{
+    background-color: #1D3557;
+    color:white;
+    border-radius: 5px;
+    width: 25%;
+    padding: 1.5%;
+    margin: 1%;
+    font-size: 20px;
+    align-self: center;
+}
+
+mark
+{
+    color: #E63946;
+    background-color: transparent;
+}
+
+.input
+{
+    background-color: #1D3557;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.title
+{
+    color: wheat;
+    letter-spacing: 2.5px;
+    font-size: 50px;
+    font-family: 'Luckiest Guy', cursive;
+
+
+}
+.input-field
+{
+    width:50%;
+    padding: 1%;
+    margin: 1%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
+}
+.fetch
+{
+    background:transparent;
+    color: white;
+    width: fit-content;
+    border: 1px solid white;
+    outline: 1px solid white;
+    outline-offset: 1px;
+    border-radius: 2px;
+    padding: 1%;
+    margin: 1%;
+    cursor: pointer;
+
+
+}
+
+.card
+{
+    background-color: #E63946;
+    color: white;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card-input
+{
+    border-radius: 5px;
+    background-color: #E63946;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    width: 50%;
+    padding: 1.5%;
+    margin: 0.5%;
+    font-family: Arial, Helvetica, sans-serif  ;
+}
+
+@media (max-width:768px)
+{
+    .self
+    {
+        width: 75%;
+    }
+    .card-input
+    {
+        width: 75%;
+        padding: 2%;
+    }
+    .input-field
+    {
+        width: 75%;
+        padding: 1.5%;
+    }
+    .fetch
+    {
+        padding: 2%;
+    }
+}
