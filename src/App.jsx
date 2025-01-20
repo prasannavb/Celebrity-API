@@ -1,5 +1,8 @@
-import { useState,useEffect, useRef} from "react";
+//React
+import { useState, useRef} from "react";
 import axios from 'axios'
+
+//css
 import "./App.css"
 
 const App=()=>
@@ -8,6 +11,7 @@ const App=()=>
     const[celebrity,Setceleb]=useState({name:" ",age:" ",dob:" ",gender:" ",nationality:" ",occupation:[],networth:" "});
     const[count,Setcount]=useState(false);
     const inp=useRef();
+    const API_KEY = import.meta.env.VITE_API_KEY
 
     const Handle=(e)=>
     {
@@ -16,8 +20,7 @@ const App=()=>
     }
 
     const FetchData=async()=>{
-    const {data}=await axios({url: 'https://api.api-ninjas.com/v1/celebrity?name=' + inp.current,headers: {'X-Api-Key': 'JrraOAG1/dszP47Pd5JajQ==Ox6qLryrEKEtb0uW'}})
-    console.log(data)
+    const {data}=await axios({url: 'https://api.api-ninjas.com/v1/celebrity?name=' + inp.current,headers: {'X-Api-Key':API_KEY }})
     if(data.length==1)
     {
         Setcount(true);
@@ -51,8 +54,8 @@ return(
             <div className="card-input">Networth: {celebrity.networth ?? "N/A"}</div>
             <div className="card-input">Occupation: {celebrity.occupation ?? "N/A"}</div>
         </div>):(<div className="card-rack">
-            {people.map((data)=>{
-            return(<div className="card">
+            {people.map((data,index)=>{
+            return(<div className="card" key={index}>
             <div className="card-input" >Name: {data.name}</div>
             <div className="card-input" >Age: {data.age ?? "N/A"}</div>
             <div className="card-input" >Date of Birth: {data.birthday ?? "N/A"}</div>
